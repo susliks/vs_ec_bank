@@ -150,11 +150,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bank.h" />
+    <ClInclude Include="bankIO.h" />
     <ClInclude Include="head.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="bankIO.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

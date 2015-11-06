@@ -1,12 +1,17 @@
+//#pragma once
 #include "stdafx.h"
 #include "sqlite3.h"
 #include "bank.h"
+#include "bankIO.h"
 #include <iostream>
 #include <cstring>
 #include <cstdlib>
 #include <cstdio>
 
 using namespace std;
+
+
+
 /*
 class Tools
 {

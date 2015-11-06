@@ -7,6 +7,9 @@
 3.考虑到各家银行还有无数的分行，所以这么做绝不是一种冗余
 
 */
+const static double eps = 1e-6;
+const static int BUF_LEN = 20;
+const int PSW_LEN = 8;	//PASSWORD LENGTH
 
 struct bankClientInfo
 {
@@ -20,11 +23,11 @@ struct bankClientInfo
 class Bank
 {
 private:
-
+	
 
 
 public:
-	virtual bool addClient(string bankName, string password, string clientId) = 0;
+	virtual bool addClient() = 0;
 	virtual bool deleteClient(string cardNum) = 0;
 	virtual void clientInfoUpdate() = 0;
 	virtual bool checkClient() = 0;
@@ -33,14 +36,27 @@ public:
 
 class ICBCBank : public Bank	//工商银行
 {
+
 private:
 	sqlite3 * db;
 	int cardNumCnt;	//编号计数
-
+	void saveCardNumCnt();
+	int loadCardNumCnt();
+	bool changeDeposit(string cardNum, double amount);
+	bool createRecord(string bankName, string password, string clientId);
+	bool deleteRecord(string cardNum);
+	bool existJudge(string cardNum);
+	bool verifyPassword(string cardNum, string password);
+	double getDeposit(string cardNum);
+	string getPassword(string cardNum);
+	string getClientId(string cardNum);
+	void setDeposit(string cardNum, double deposit);
+	void setPassword(string cardNum, string passward);
+	void setClientId(string cardNum, string clientId);
 public:
 	ICBCBank();
 	~ICBCBank();
-	bool addClient(string bankName, string password, string clientId);
+	bool addClient();
 	bool deleteClient(string cardNum);
 	void clientInfoUpdate();
 	bool checkClient();
