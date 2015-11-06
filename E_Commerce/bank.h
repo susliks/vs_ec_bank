@@ -22,6 +22,7 @@ class Bank
 private:
 
 
+
 public:
 	virtual bool addClient(string bankName, string password, string clientId) = 0;
 	virtual bool deleteClient(string cardNum) = 0;
