@@ -366,6 +366,7 @@ void ICBCBank::setDeposit(string cardNum, double deposit)
 	result = sqlite3_exec(db, SQLCode.c_str(), 0, 0, &errmsg);
 }
 
+
 void ICBCBank::setPassword(string cardNum, string password)
 {
 	int result;
