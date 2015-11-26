@@ -32,6 +32,11 @@ public:
 	virtual void clientInfoUpdate() = 0;
 	virtual bool checkClient() = 0;
 	virtual bool transaction() = 0;
+	virtual bool existJudge(string cardNum) = 0;
+	virtual bool verifyPassword(string cardNum, string password) = 0;
+	virtual bool changeDeposit(string cardNum, double amount) = 0;
+	//bool bank_connect();
+	
 };
 
 class ICBCBank : public Bank	//工商银行
@@ -61,6 +66,8 @@ public:
 	void clientInfoUpdate();
 	bool checkClient();
 	bool transaction();
+
+	//bool bank_connect();
 };
 
 class ABCBank : public Bank		//农业银行

@@ -50,5 +50,8 @@
     <ClCompile Include="bankIO.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="ec_connect.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

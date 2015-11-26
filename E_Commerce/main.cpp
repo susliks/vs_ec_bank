@@ -2,9 +2,6 @@
 #include "head.h"
 
 
-
-
-
 int main()
 {
 	//
@@ -18,8 +15,12 @@ int main()
 
 	//freopen("in.txt", "r", stdin);
 
+	HANDLE hThread2 = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)connection, NULL, 0, NULL);
+	//bank_connect();
+
 	bool endFlag = false;
 	Bank *pBank = NULL;
+
 	while (!endFlag)
 	{
 		int n;
